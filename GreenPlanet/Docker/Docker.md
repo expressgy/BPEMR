@@ -48,6 +48,10 @@ Docker是一个Client-Server结构的系统，Docker守护进程运行在主机�
 
 
 
+<img src="./Docker.assets/Docker%E5%92%8CVMware%E5%8C%BA%E5%88%AB.png" alt="Docker和VMware区别" style="zoom:50%;" />
+
+
+
 > Docker是一个解决了运行环境和配置问题，并且方便做持续集成以及有助于整体发布的容器虚拟化技术。
 
 - 镜像
@@ -298,21 +302,30 @@ $ newgrp docker	# 激活组更改，无效的话尝试重连ssh，退出登录�
 
 ## 1 基础组件
 
-### 1.1 Docker引擎
+### 1.1 ⭐Docker引擎
 
 <img src="./Docker.assets/Docker%20Engine.png" alt="Docker Engine" style="zoom: 50%;" />
 
-### 1.2 Docker核心
+### 1.2 ⭐Docker核心
 
 <img src="./Docker.assets/Docker%E6%A0%B8%E5%BF%83.png" alt="Docker核心" style="zoom: 50%;" />
 
-### 1.3 Docker平台组成
+### 1.3 ⭐Docker平台组成
 
 <img src="./Docker.assets/Docker%E5%B9%B3%E5%8F%B0%E7%BB%84%E6%88%90.png" alt="Docker平台组成" style="zoom: 50%;" />
 
-### 1.4 Docker生命周期
+### 1.4 ⭐Docker生命周期
 
 <img src="./Docker.assets/Docker%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png" alt="Docker生命周期" style="zoom:50%;" />
 
-### 1.5 Docker分层原理
+### 1.5 ⭐Docker分层原理
 
+![镜像分层原理](./Docker.assets/%E9%95%9C%E5%83%8F%E5%88%86%E5%B1%82%E5%8E%9F%E7%90%86.png)
+
+
+
+-----
+
+
+
+# 🔯四、命令
