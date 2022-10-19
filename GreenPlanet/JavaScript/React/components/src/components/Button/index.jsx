@@ -1,21 +1,25 @@
 import BPEMR from './index.module.scss'
 import {useState, useEffect} from "react";
 
-export default function Button(props){
+export default function Button(props) {
     // console.log(props)
 
     const [size, setSize] = useState(props.size)
     const [type, setType] = useState(props.type)
+    const [loading, setLoading] = useState(props.loading)
+    const [disable, setDisable] = useState(props.disable)
 
     useEffect(() => {
         setSize(props.size ? props.size : 'default')
         setType(props.type ? props.type : 'default')
-    },[props.size, props.type])
+        setLoading(props.loading ? BPEMR.loading : '')
+        setDisable(props.disable ? BPEMR.disable : '')
+    }, [props.size, props.type])
 
     const sizeOp = {
-        default:BPEMR.defaultsize,
-        undersize:BPEMR.undersize,
-        oversize:BPEMR.oversize,
+        default: BPEMR.defaultsize,
+        undersize: BPEMR.undersize,
+        oversize: BPEMR.oversize,
     }
     const typeOp = {
         default: BPEMR.defaultColor,
@@ -33,11 +37,20 @@ export default function Button(props){
         warning3: BPEMR.w3Color,
     }
 
+    const classname = [BPEMR.BPEMR_button, loading, disable, sizeOp[size], typeOp[type]].join(' ')
+    // console.log(classname)
+    if (props.onClick && typeof props.onClick === 'function') {
 
-
-    const classname = [BPEMR.BPEMR_button, sizeOp[size], typeOp[type]].join(' ')
+    } else {
+        if (props.onClick) {
+            throw new Error('onClick必须位函数')
+        }
+    }
 
     return (
-        <div className={classname} style={props.style} onClick={ !props.disable ? props.onClick : ()=>{}}>{props.children}</div>
+        <div className={BPEMR.BPEMR_button_box}>
+            <div className={classname} style={props.style} onClick={!props.disable ? props.onClick : () => {
+            }}>{props.children}</div>
+        </div>
     )
 }
