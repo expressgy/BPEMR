@@ -30,28 +30,34 @@ $modalHide:modalHide;
     }
 }
 .temModalShow{
-    animation: modalShow ease-in-out 500ms forwards;
+    animation: modalShow ease-in-out 300ms forwards;
 }
 .temModalHide{
-    animation: modalHide ease-in-out 500ms forwards;
+    animation: modalHide ease-in-out 300ms forwards;
 }
 
 @keyframes modalShow {
-    from{
+    0%{
         transform: scale(0.3);
         box-shadow: 5px 10px 30px -10px #33333300;
     }
-    to{
+    80%{
+        transform: scale(1.1);
+    }
+    100%{
         transform: scale(1);
         box-shadow: 5px 10px 30px -10px #333333aa;
     }
 }
 @keyframes modalHide {
-    from{
+    0%{
         transform: scale(1);
         box-shadow: 5px 10px 30px -10px #333333aa;
     }
-    to{
+    20%{
+        transform: scale(1.1);
+    }
+    100%{
         transform: scale(0);
         box-shadow: 5px 10px 30px -10px #33333300;
     }
